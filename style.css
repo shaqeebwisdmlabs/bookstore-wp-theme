@@ -118,7 +118,7 @@ select {
 
 .container {
   --max-width: 1120px;
-  --padding: 1rem;
+  --padding: 1.5rem;
 
   width: min(var(--max-width), 100% - var(--padding));
   margin-inline: auto;
