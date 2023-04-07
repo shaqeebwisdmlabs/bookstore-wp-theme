@@ -18,7 +18,13 @@
     <header class="bg-neutral-200">
         <div class="header--container | container">
             <a href="/" class="logo | flex">
-                <img src="<?php echo bloginfo('template_directory') . "/assets/images" ?>/logo.svg" alt="company-logo" />
+                <?php
+                if (function_exists('the_custom_logo')) {
+                    $custom_logo_id = get_theme_mod('custom_logo');
+                    $logo = wp_get_attachment_image_src($custom_logo_id);
+                }
+                ?>
+                <img src="<?php echo $logo[0] ?>" alt="company-logo" />
                 <span class="text-neutral-900 fs-title fw-black"><?php echo get_bloginfo('name'); ?></span>
             </a>
             <button class="nav-toggle" aria-expanded="false">

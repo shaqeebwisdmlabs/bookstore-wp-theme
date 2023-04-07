@@ -39,3 +39,28 @@ function wsd_register_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'wsd_register_scripts');
+
+function wsd_widgets_areas()
+{
+    register_sidebar(array(
+        'name' => 'Company info in footer area',
+        'id' => 'comp-info',
+        'description' => 'Company info in the footer left bottom under company logo',
+        'before_title' => '',
+        'after_title' => '',
+        'before_widget' => '',
+        'after_widget' => '',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Contact Info',
+        'id' => 'contact-info',
+        'description' => 'Contact info in the footer right',
+        'before_title' => '',
+        'after_title' => '',
+        'before_widget' => '',
+        'after_widget' => '',
+    ));
+}
+
+add_action('widgets_init', 'wsd_widgets_areas');
