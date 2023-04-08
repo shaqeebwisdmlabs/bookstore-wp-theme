@@ -35,7 +35,7 @@ add_action('wp_enqueue_scripts', 'wsd_register_styles');
 function wsd_register_scripts()
 {
     $version = wp_get_theme()->get('version');
-    wp_enqueue_script('main_script', get_template_directory_uri() . "/assets/js/script.js", $version, true);
+    wp_enqueue_script('main_script', get_template_directory_uri() . "/assets/js/script.js", array('jquery'), $version, true);
 }
 
 add_action('wp_enqueue_scripts', 'wsd_register_scripts');
